@@ -4,13 +4,23 @@
 import math
 
 
-def move(x, y, step, angle=0):
-    nx = x + step * math.cos(angle)
-    ny = y - step * math.sin(angle)
-    return nx, ny
+def f1(a, b, c=0, *args, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
 
 
-t = move(100, 100, 60, int(math.pi / 6))
-print(t[0])
+def f2(a, b, c=0, *, d, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
+
+
+args = (1, 2, 3, 4)
+kw = {'d': 99, 'x': '#'}
+f1(*args, **kw)
+f1(*(5, 6, 7, 8), **kw)
+
+args = (1, 2, 3)
+kw = {'d': 88, 'x': '#'}
+f2(*args, **kw)
+
+
 
 
