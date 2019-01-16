@@ -44,7 +44,6 @@ CHAR_TO_FLOAT = {
 def str2float(s):
     nums = map(lambda ch: CHAR_TO_FLOAT[ch], s)
 
-
     def to_float(f, n):
         if n == -1:
             return f
